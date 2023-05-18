@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+  <style>
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+    
+  <style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		nav {
+			background-color: orange;
+			color: #fff;
+			padding: 20px;
+			display: flex;
+			
+		
+			position: fixed;
+			width: 100%;
+			top: 0;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			display: inline-block;
+			transition: all 0.3s ease;
+		}
+
+		nav a:hover {
+			background-color: #fff;
+			color: orange;
+			border-radius: 10px;
+		}
+
+		nav a.active {
+			background-color: #fff;
+			color: #333;
+			border-radius: 10px;
+		}
+	</style>
+    
+  <nav><img src="title .jpg">&emsp;&emsp;&emsp;&emsp;
+    <a href="p1a.html" class="active">Home</a>&emsp;&emsp;
+    <a href="aboutus.html">About Us</a>&emsp;&emsp;
+    <a href="FAQ.html">FAQ</a>&emsp;&emsp;
+    <a href="mailto:shashankpant94115@gmail.com">Email</a>&emsp;&emsp;
+</nav>
+    
+    
+    
+    
+    <div style="border:1px solid gray; background-color:red;">
+    <h1 align="center">Stage-1</h1>
+  </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  #timer-container {
+    text-align: right;
+  }
+
+  #timer {
+    font-size: 60px;
+    margin-top: 0;
+    font-family: "Lucida Console", Monaco, monospace;
+    letter-spacing: 0.05em;
+    background-color: black;
+    color: #0ff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0ff;
+  }
+  
+  #start-btn {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #start-btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div id="timer-container">
+<p id="timer">02m 00s</p>
+</div>
+
+
+
+
+
+<button id="start-btn">Start</button>
+
+<script>
+var countDownDate, x;
+
+document.getElementById("start-btn").addEventListener("click", function() 
+{
+  // Set the date we're counting down to
+  countDownDate = new Date();
+  countDownDate.setMinutes(countDownDate.getMinutes() + 2);
+  countDownDate = countDownDate.getTime();
+
+  // Disable the "Start" button
+  document.getElementById("start-btn").disabled = true;
+
+  // Update the count down every 1 second
+  x = setInterval(function() {
+
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Add leading zeros to the minutes and seconds
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+    // Output the result in an element with id="timer"
+    document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+    // If the count down is over, submit the form
+    if (distance <= 0) {
+      clearInterval(x);
+      document.getElementById("timer").innerHTML = "EXPIRED";
+      document.getElementById("myform").submit();
+    }
+  }, 1000);
+});
+</script>
+
+
+
+
+
+<br><hr>
+  <font color="red" face="comic sans ms"size="4">
+<b><i>Instructions for round-1<br>
+<ol><li>Press the start button to start the quiz</li>
+<li>Each question contains one mark each</li>
+<li>Min marks to qualify for next round is 3 marks</li>
+<li> Total Time given is 2 mins</li></ol></i></b></b></font>
+<hr>
+<form method="POST" action="space.php" id="myform">
+  <label for="q1">
+    <font size="5">Q1)
+        Which of these objects is the farthest from the Sun?
+  </label><br><br>
+  
+  <div style="border:2px solid gray;width:50%;background-color:aqua;">
+    <input type="radio" name="q1" value="S">Saturn<br><hr>
+    <input type="radio" name="q1" value="Q">Kuiper Belt<br><hr>
+    <input type="radio" name="q1" value="A">90377 Sedna<br><hr><!---->
+    <input type="radio" name="q1" value="L">Neptune
+  </div>
+  
+  <br>
+  
+  <label for="q2">
+    Q2)What is the name of the first space tourist?
+  </label><br><br>
+  
+  <div style="border:2px solid gray;width:50%;background-color:aqua;">
+    <input type="radio" name="q2" value="T">Dennis Tito<br><hr><!---->
+    <input type="radio" name="q2"value="Q">Richard Garriott<br><hr>
+    <input type="radio" name="q2" value="H">Mark Shuttleworth<br><hr>
+    <input type="radio" name="q2"value="G">Greg Olsen
+  </div><br><br>
+
+  <label for="q3">
+   Q3) What makes a planet a dwarf planet?
+  </label><br><br>
+  
+  <div style="border:2px solid gray;width:50%;background-color:aqua;">
+    <input type="radio" name="q3"value="T">smell&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q3"value="Q">color&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q3"value="A">distance from the Sun&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;<hr>
+    <input type="radio" name="q3"value="L">size and shape&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!---->
+  </div><br><br>
+  <label for="q4">
+    Q4)What is the scientific term used for the twinkling of stars?
+  </label><br><br>
+  
+  <div style="border:2px solid gray;width:50%;background-color:aqua;">
+    <input type="radio" name="q4"value="pu">Parallax&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q4"value="po">Albedo&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q4"value="E">Refraction&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;<hr><!---->
+    <input type="radio" name="q4"value="PK">Scintillation&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  </div><br><br>
+
+  <label for="q5">
+   Q5) In which galaxy was a black hole discovered in the year 2017?
+  </label><br><br>
+  
+  <div style="border:2px solid gray;width:50%;background-color:aqua;">
+    <input type="radio" name="q5"value="L">Comet&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q5"value="A">IC 1101&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<hr>
+    <input type="radio" name="q5"value="T">NGC 1300&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;<hr>
+    <input type="radio" name="q5"value="S">M87&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!---->
+  </div><br><br>
+
+
+
+
+
+
+
+
+
+</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<button id="submit-button" type="submit"class="button" onclick="return confirmSubmit()">Submit</button>
+
+
+<script>
+function confirmSubmit() {
+  var x = confirm("Do you want to submit?");
+  if (x) {
+    return true;
+  } else {
+    return false;
+  }
+}
+</script>
+
+
+<footer><table align=right><tr><td>&copy2023, QUIZLY.All rights reserved.</td></tr></table></footer>
+
+</body>
+</html>
